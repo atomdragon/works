@@ -1,0 +1,5 @@
+﻿  ArrDragon.cpp
+D:\cosas mias\Practicas\Practicas_correcto\ArrDragon.cpp(73,37): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\cosas mias\Practicas\Practicas_correcto\ArrDragon.cpp(41): warning C4715: 'ArrDragon::modificar_datos_dragon': no todas las rutas de acceso de control devuelven un valor
+  ArrDragon.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  Practicas_correcto.vcxproj -> D:\cosas mias\Practicas\Practicas_correcto\x64\Debug\Practicas_correcto.exe

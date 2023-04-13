@@ -1,0 +1,3 @@
+D:\cosas mias\Practicas\Practicas_correcto\x64\Debug\Practicas_correcto.vcxproj.AssemblyReference.cache
+D:\cosas mias\Practicas\Practicas_correcto\x64\Debug\Practicas_correcto.vcxproj.SuggestedBindingRedirects.cache
+D:\cosas mias\Practicas\Practicas_correcto\x64\Debug\Practicas_correcto.exe
