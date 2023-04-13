@@ -1,0 +1,3 @@
+D:\cosas mias\Practicas\Prueba_modelos\x64\Debug\Prueba_modelos.vcxproj.AssemblyReference.cache
+D:\cosas mias\Practicas\Prueba_modelos\x64\Debug\Prueba_modelos.vcxproj.SuggestedBindingRedirects.cache
+D:\cosas mias\Practicas\Prueba_modelos\x64\Debug\Prueba_modelos.exe

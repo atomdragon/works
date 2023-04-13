@@ -1,0 +1,5 @@
+﻿  Prueba_modelos.cpp
+D:\cosas mias\Practicas\Prueba_modelos\Prueba_modelos.cpp(170,3): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\cosas mias\Practicas\Prueba_modelos\ArrHotel.h(52): warning C4715: 'ArrHotel::modificar': no todas las rutas de acceso de control devuelven un valor
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  Prueba_modelos.vcxproj -> D:\cosas mias\Practicas\Prueba_modelos\x64\Debug\Prueba_modelos.exe
