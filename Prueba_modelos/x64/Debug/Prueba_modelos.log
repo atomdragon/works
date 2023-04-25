@@ -1,5 +1,6 @@
-﻿  Prueba_modelos.cpp
-D:\cosas mias\Practicas\Prueba_modelos\Prueba_modelos.cpp(170,3): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-D:\cosas mias\Practicas\Prueba_modelos\ArrHotel.h(52): warning C4715: 'ArrHotel::modificar': no todas las rutas de acceso de control devuelven un valor
+﻿  Source.cpp
+D:\cosas mias\Practicas\Prueba_modelos\Avion8.h(17,49): warning C4129: '(': secuencia de escape de carácter no reconocida
+D:\cosas mias\Practicas\Prueba_modelos\Source.cpp(6,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\cosas mias\Practicas\Prueba_modelos\Source.cpp(34,3): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Prueba_modelos.vcxproj -> D:\cosas mias\Practicas\Prueba_modelos\x64\Debug\Prueba_modelos.exe

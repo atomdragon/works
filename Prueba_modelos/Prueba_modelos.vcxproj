@@ -127,9 +127,18 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrHotel.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\ArregloEntidad.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion1.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion2.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion3.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion4.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion5.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion6.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion7.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion8.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Avion9.h" />
+    <ClInclude Include="..\..\..\Basura\Algoritmos\Avión\Avión\Entidad.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Hotel.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +149,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Prueba_modelos.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
