@@ -1,0 +1,2 @@
+C:\Users\Alumnos\source\repos\proyect\Debug\proyect.vcxproj.AssemblyReference.cache
+C:\Users\Alumnos\source\repos\proyect\Debug\proyect.exe
