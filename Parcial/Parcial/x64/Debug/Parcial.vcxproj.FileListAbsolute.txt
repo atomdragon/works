@@ -1,0 +1,2 @@
+D:\Basura\Algoritmos\Parcial\Parcial\x64\Debug\Parcial.vcxproj.AssemblyReference.cache
+D:\Basura\Algoritmos\Parcial\Parcial\x64\Debug\Parcial.vcxproj.SuggestedBindingRedirects.cache
