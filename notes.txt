@@ -1,0 +1,24 @@
+Es una zona de trabajo:
+ -  Puede ser un panel
+
+Se puedem utilizar las isguientes funciones:
+ 1) Dibujar
+ 2) Clonar
+ 3) Escalar
+ 4) Resetear
+ 5) Estilo Borde
+ 6) Estilo Linea
+
+ Pen: Se utiliza para hacer lineas
+ Brushes: 
+ Font: 
+
+
+Pasos para crear una linea:
+
+ 1) Crear un objeto
+ 2) Creas un punto inicial y final de la linea
+ 3) Lo dibujas en la pantalla
+
+El "using namespace System::Drawing;", sirve para dibujar
+El "Panel = this->CreateGraphics();", sirve para la creación de la zona de dibujo

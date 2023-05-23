@@ -1,0 +1,4 @@
+C:\Users\Alumnos\source\repos\Semana10_10\Debug\Semana10_10.vcxproj.AssemblyReference.cache
+C:\Users\Alumnos\source\repos\Semana10_10\Debug\Semana1010.MyForm.resources
+C:\Users\Alumnos\source\repos\Semana10_10\Debug\Semana10_10.vcxproj.GenerateResource.cache
+C:\Users\Alumnos\source\repos\Semana10_10\Debug\Semana10_10.exe
