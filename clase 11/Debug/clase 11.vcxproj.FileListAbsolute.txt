@@ -1,0 +1,4 @@
+C:\Users\Alumnos\source\repos\clase 11\Debug\clase 11.vcxproj.AssemblyReference.cache
+C:\Users\Alumnos\source\repos\clase 11\Debug\clase11.MyForm.resources
+C:\Users\Alumnos\source\repos\clase 11\Debug\clase 11.vcxproj.GenerateResource.cache
+C:\Users\Alumnos\source\repos\clase 11\Debug\clase 11.exe
