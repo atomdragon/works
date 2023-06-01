@@ -1,0 +1,41 @@
+				Enlazar un forms con otro forms
+
+1) En primer lugar debemos crear oro formulario.
+
+2) Luego de ello vamos a crear un boton, este servira para llevarnos hacia el otro formulario.
+
+3) Una vez creado le damos doble click, de esta manera se nos abrira la función del botón el cual vamos a utilizar.
+
+4) Esta parte no la tengo clara sin embargo se utiliza en el código, this->Hide();, esta parte minimiza o esconde el forms.
+
+5) Como quinto paso, vamos a crear un objeto o instancia de la clase del segundo formularo. 
+	psdt: No te olvides que cuando vayas a crear un objeto ya no se utiliza new sino gcnew.
+
+6) Despues utlizamos este objeto para mostrar el panel.
+
+	/*nombre del objeto derivado de la clase del segundo form*/ juego1->ShowDialog();
+
+7) Para este punto ya debes haber abierto el segundo formulario
+
+8) Para el segundo form, vas a realizar algo similar, vas a crear un boton y abrir la función que lo controla 
+
+9) Luego nos vamos a ir a public, arriba de lo que seria el nombre del forms(void)(Este seria el constructor), se creara un objeto de clase Form.
+
+	Form^ obj;
+
+10) Como décimo paso vamos a crear otro constructor sin embargo ya no tendra como parametro el void sino un objeto de clase form.
+
+11) Luego, en este constructor vamos a darle como valor al objeto de la clase forms el paramatero del constructor.
+
+12) Ahora vamos a volver al boton creado en el segundo formulario, en este vamos a solo utlizar el Hide anteriormente escrito y con el objeto creado de la clase Form, vamos a llamar a la función show();
+
+obj->show();
+
+13) En el doceavo paso vamos de regreso al boton del primer formulario y dentro de sus parametros vamos a escribir this.
+
+Ejemplo:
+	this->Hide();
+	MyForm1^ regreso = gcnew MyForm1(this);
+	regreso->ShowDialog();
+
+14) Listo lo has realizado

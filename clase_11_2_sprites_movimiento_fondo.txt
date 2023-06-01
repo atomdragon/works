@@ -1,0 +1,13 @@
+				Clase del 6/1 - Sprides con fondo
+
+1) En primer lugar el programa no funcionaria sin incluir en: 
+
+	using namespace System::Drawing;
+
+2)El Bitmap es para cagar la imagen en el bufer
+
+3) Esta parte del código copia la ruta del nombre del archivo, para poder traerlo a la programa sin problemas, sino se hiciera ello entonces tendriamos un error ya que no sabe de donde coger (encontrar) la imagen.
+
+4) Con respecto a la tecla pulsada (enum), podemos utilizar un switch el cual se iguale a la dirección que queramos ir (Arriba,abajo,derecha izquierda), además de ello tambien debemos igualarlo al alto, este indicara que fila utilizar para cada acción.
+
+5) Ahora nos dirigimos en la parte de encabezado del formulario (private), en este podemos modificar donde queremos que aparezca el personaje ya sea en uno especifico o en uno aleatorio de la pantalla.
