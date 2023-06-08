@@ -1,0 +1,162 @@
+					Como realizar el movimiento con sprites
+
+1) En primer lugar debemos crear una clase la cual tenga que ver con el sprite que vayamos a usar o los sprites que en general.
+
+1) En segundo lugar debemos definir mediante la clase enum las acciones que va a realizar nuestro personaje como Mover_Izquierda, Saltar, Atacar. Es importante que lo coloquemos conforme estan plasmadas las acciones de las filas de la imagen que vamos a utilizar. 
+
+	enum Act_player
+	{
+		Atras, Izquierza, Derecha, Adelante, 
+		Sentado_Atras, Sentado_Izquierda, Sentado_Derecha, Sentado_Adelante
+	};
+
+3) En tercer lugar  declaramos private los atributos que vamos a utilizar los cuales son: 
+
+	int x, y;
+	int dx, dy;
+	int IdX,IdY;
+	int ancho, alto;
+
+Además tenemos que crear un objeto a partir de las acciones que va a realizar nuestro personaje.
+
+	Act_player Acciones;
+
+El IDY sirven para la modificar cual sera la fila utilizada, mientras que el IdX servira para aumentar la columna utilizada para el movimiento.
+
+4)  Luego de realizar esta acción vamos a crear nuestro constructor y destructor, el constructor tendra como parametros un ancho y un alto, esto servira para las dimensiones de la imagen que vayamos a utilizar.
+
+Personaje(int _ancho, int _alto)
+
+5) Para este quinto paso vamos a declarar el X e Y en un punto donde queramos que apareza nuestro persoanje. (Podemos crearlo en 150 que es más o menos el centro de la pantalla)
+
+6)Las variables de ancho y alto ya declaradas seran igualadas a los parametros del constructor, estas seran las medidas en ancho y alto del personaje.
+
+	ancho = _ancho;
+	alto = _alto;
+
+7) El IdX e IdY se igualan una a otra y estas a la vez seran iguales a 0. Que quiero decir que tanto las filas como las columnas comenzaran en la imagen 0 (En la primera imagen).
+
+	IdX = IdY = 0;
+
+8)  Por ultimo tenemos  el dx y dy, estos serviran para el movimiento del jugador. Quiero decir a que velocidad iran. De igual manera que el IdX e IdY se igualaran con la diferencia que estos se igualan a 15.
+
+	dx = dy = 15;
+
+9) En el noveno paso tenemos la función dibujar, esta función se encargara de dibujar al personaje (valga la redundancia), le vamos a dar como parametros Graphics y Bitmap, estos 2 parametros sirven para poder darle lugar en donde se dibuje el personaje y el Bitmap es un mapa de bits, pero para hacerlo más sencillo es donde se guarda la imagen que vamos a utilizar.
+
+void Personaje::Dibujar(Graphics^ Lugar_draw, Bitmap^ image)
+
+10) Luego de ello tenemos que identificar que frame o parte del sprite vamos a utilzar para ello vamos a utilizar la clase rectangule, ello nos va a servir para encontrar el frame que necesitemos, esta clase rectangule va a tener parametros el primero de ellos va a ser el frame que vamos a utilizar a lo ancho, que quiero decir, el ancho (ancho) de la imagen se multiplicara con el la columna (IdX)  que vamos a utlizar, como segundo parametro realizamos el mismo procedimiento con las filas, se multiplica el IdY con el alto y para terminar los ultimos 2 parametros seran el ancho y alto de la imagen.
+
+	Rectangle Frame = Rectangle(IdX * ancho, IdY * alto, ancho, alto);
+
+11)  Tenemos el onceavo paso, en este vamos a darle zoom a nuestra imagen, se crea un objeto de la clase rectangule.
+
+Rectangle Zoom;
+
+12) Luego el objeto le vamos a igualar a rectangule y abrimos parentesis, los parametros que va a tener son x, y, y por cuanto se va a multiplicar el ancho y el alto, esto permitira hacer más nuestro personaje.
+
+	Rectangle Zoom = Rectangle(x, y, ancho * 1.0, alto * 1.0);
+
+13) En este paso es juntar lo que hemos trabajado. Vamos a llamar al parametro de la función de la clase Graphics, una vez realizado ello vamos a llamar a una de sus funciones llamada DrawImage. Esta función va a tener parametros, el primero sera la imagen, esto quiere decir que necesitamos el parametro de la funcion imagen (image).
+
+Lugar_draw->DrawImage(image)
+
+14) El siguiente parametro sería el zoom, el tercero los frames y por ultimo la unidad que vamos a utilizar para el dibujo o imagen, en este caso utilizaremos pixel. Quedaría de esta forma.
+
+Lugar_draw->DrawImage(image, Zoom, Frame, GraphicsUnit::Pixel);
+
+15) Ahora pasamos a una nueva función esta sera la función de movimiento del personaje, tendra 2 parametros, el primero el cual sera graphics (Lugar donde se dibujara el personaje) y el segundo el cual sera char, este sera para las teclas que se utilizara para mover el personaje.
+
+void Personaje::Move(System::Drawing::Graphics^ Lugar_draw, char teclas)
+
+16) Luego de ello se creara un switch este tendra como parametro "teclas" y empezaremos definiendo los casos que vamos a utilizar, como es el arriba (W), abajo (S), izquierda (A) y derecha (D).
+
+17) dentro de estos case, colocaremos las circunstancias en las que pasaria el movimiento, por ejemplo para ir hacia arriba el parametro tendria que indicar que mientras el personaje este arriba de 0 (y > 0) puede moverse.
+
+case 'A':
+		if (x > 0)
+		{
+			IdY = 2;
+			x -= dx;
+		}
+		break;
+
+18) Para ir a la derecha tenemos que delimitar todo el personaje, esto quiere decir que tenemos que sumar el x más el movimiento de dx*1.0 (Este seria el zoom que tendría el personaje) y mientras sea menor a panel puede moverse, hasta ahí todo correcto, pero como hacemos para que no se salga del panel si no tenemos idea del tamaño del panel, pues se utiliza el parametro de la función de mover "Lugar_draw", en este tenemos la función de VisibleClipBounds esta función nos permitira acceder a Width que significa ancho, ello nos permitira delimitar el espacio donde se puede mover hacia la derecha nuestro personaje. Esto pasa de igual manera con el y, sin embargo en lugar de ser Height será width.
+
+19) Por último tenemos que realizar el movimiento del personaje en el eje x, verdad?, entonces tenemos que decir que el IdX aumentara, hasta que este alcanze el máximo de imagenes por columna que se tiene en el ejemplo esta como 5, cuando este sea mayor de 5 volvera a 0 esto hará que se repita el movimiento constantemente. Esta ultima parte debe ir debajo del break que hayas utilizado para el ultimo caso.
+
+
+void Personaje::Move(System::Drawing::Graphics^ Lugar_draw, char teclas)
+{
+	switch (teclas)
+	{
+	case 'A':
+		if (x > 0)
+		{
+			IdY = 2;
+			x -= dx;
+		}
+		break;
+	case 'D':
+		if (x + ancho * 1.0 < Lugar_draw->VisibleClipBounds.Width)
+		{
+			IdY = 3;
+			x += dx;
+		}
+		break;
+	case 'W':
+		if (y > 0)
+		{
+			IdY = 4;
+			y -= dy;
+		}
+		break;
+	case 'S':
+		if (y + alto * 1.0 < Lugar_draw->VisibleClipBounds.Height)
+		{
+			IdY = 1;
+			y += dy;
+		}
+		break;
+
+		IdX++;
+		if (IdX > 5) IdX = 0;
+	}
+}
+
+20) Llegamos al paso número 20, en este vamos a ir al cuadro de herramientas del panel, vamos a utilizar el panel y el timer, estas 2 herramientas nos van a servir para el dibujo. 
+
+psdt: No te olvides de darles un nombre personalizado, en el caso de panel, Pnl.
+
+21) Una vez los hemos creado vamos a dirigirnos a debajo de components (Antes del pragma region) y vamos a crear otro private, en este vamos a crear nuestras variables.
+
+22) Estas variables seran las de Graphics (Ya saben, donde se dibujara el personaje), luego ira el BufferedGraphicsContext^ este servira para el renderizado del personaje, que quiero decir, que no habra parpadeos cuando se ejecute el personaje. Y por último BufferedGraphics^ , este sera como una pantalla donde se dibujan diferentes escenas de un dibujo animado para luego unirse y formar una imagen completamente diferente. Algo así, jajaja, es donde se realizara una pre animación. Y por último el bitmap del personaje (Este guardara la imagen del personaje).
+
+	Graphics^ Lugar_Draw;
+	BufferedGraphicsContext^ Rend_image;
+	BufferedGraphics^ Pnl_pre_draw;
+	Bitmap^ bmp_player;
+	Personaje* lobo;
+
+23) Luego de crear las variables les vamos a dar valor, al graphics(Lugar_Draw) le vamos a dar el valor del panel que hemos creado, sin embargo al darle el valor del panel tenemos que acceder a una función que tiene el cual es CreateGraphics(); , esto nos permitira realizar dibujos en el area del panel.
+
+	Lugar_Draw = Pnlcanvas->CreateGraphics();
+
+24) Luego le daremos valor al BufferedGraphicsContext(Rend_Image), este sera el del BufferedGraphicsManager, este valor se encarga de administrar el panel, es decir, es el que puede crear los objetos gráficos que se utilizan para realizar dibujos en el búfer de la memoria antes de mostrarlo. Es como realizar un acto en un escenerio con el telón abajo, los espectadores no saben que se esta realizando el acto bajo el telón.
+
+	Rend_image = BufferedGraphicsManager::Current;
+
+25) Una de las ultimas cosas que tenemos que hacer es darle valor a BufferedGraphics este sera el encargado de juntar el Rend_image y el Lugar_Draw. Para ello le vamos a dar el valor del  BufferedGraphicsContext (Rend_image), este llamara a su función Allocate, este servira para darle la instrucción de realizarse antes de mostrarse en el panel, tendra de parametros, el Graphics y el panel, sin embargo el panel llamara a una función la cual es el ClientRectangule (Area donde se dibujara al personaje).
+
+	Pnl_pre_draw = Rend_image->Allocate(Lugar_Draw, Pnlcanvas->ClientRectangle);
+
+26) Finalmente llamamos al Bitmap del personaje y le asignamos la imagen correspondiente a utilizar .
+
+			bmp_player = gcnew Bitmap("wolf_black_full.png");
+
+Y se llamara a la instancia creada a partir de la clase Personaje o el nombre que se le haya asignado para darle el tamaño del personaje a utilizar, mejor dicho un pedazo de la imagen a utilizar.
+
+	lobo = new Personaje(bmp_player->Width / 5, bmp_player->Height / 7);
+
+27)
